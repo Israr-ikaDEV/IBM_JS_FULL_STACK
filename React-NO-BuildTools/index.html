@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REACT APP WITHOUT BUILD TOOLS</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="./react-lib/react.development.js"></script>
+    <script src="./react-lib/react-dom.development.js"></script>
+    <script>
+      
+      const Header = React.createElement("h1", null, "React App without Build Tools");
+      const para1 = React.createElement(
+        "p",
+        null,
+        "This is a simple React application without using any build tools like Webpack or Babel."
+      );
+      const para2 = React.createElement(
+        "p",
+        null,
+        "It uses React and ReactDOM from CDN and plain JavaScript to create components and render them to the DOM."
+      );
+      const para3 = React.createElement(
+        "p",
+        null,
+        "This approach is suitable for small projects or learning purposes, but for larger applications, using build tools is recommended for better performance and developer experience."
+      );
+
+      
+      const items = ["Learn React", "Practice Daily", "Build Projects"];
+      const list = React.createElement(
+        "ul",
+        null,
+        items.map((item, index) =>
+          React.createElement("li", { key: index }, item)
+        )
+      );
+
+      // Toggle Button Component
+      function ToggleButton() {
+        
+
+        function toggleBackground() {
+          if (document.body.style.backgroundColor === "black") {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            const lis = document.getElementsByTagName("li");
+            for (let li of lis) {
+              li.style.backgroundColor = "#f4f4f4";
+              li.style.color = "black";
+            }
+          } else {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+          }
+          
+        }
+
+        return React.createElement(
+          "button",
+          {
+            onClick: toggleBackground,
+            style: { marginTop: "20px", padding: "10px" },
+          },
+          document.body.style.backgroundColor === "black"
+            ? "Switch to Light Mode"
+            : "Switch to Dark Mode"
+        );
+      }
+
+      
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(
+        React.createElement("div", { id: "childDiv" }, [
+          Header,
+          para1,
+          para2,
+          para3,
+          list,
+          React.createElement(ToggleButton),
+        ])
+      );
+    </script>
+  </body>
+</html>
