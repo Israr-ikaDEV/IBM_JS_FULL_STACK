@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="pageLoaded()">
+    <div class="calculator">
+      <input
+        type="text"
+        id="display"
+        onfocus="inputFocused()"
+        onselect="inputSelected()"
+        onkeyup="keyPressed(event)"
+        readonly
+      />
+      <div class="buttons">
+        <button onmouseover="hoverEffect(this)" onclick="clearDisplay()">
+          C
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('/')">
+          /
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('*')">
+          *
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="deleteLast()">
+          DEL
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('7')">
+          7
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('8')">
+          8
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('9')">
+          9
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('-')">
+          -
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('4')">
+          4
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('5')">
+          5
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('6')">
+          6
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('+')">
+          +
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('1')">
+          1
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('2')">
+          2
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('3')">
+          3
+        </button>
+        <button onmouseover="hoverEffect(this)" onclick="appendValue('.')">
+          .
+        </button>
+        <button
+          onmouseover="hoverEffect(this)"
+          onclick="appendValue('0')"
+          class="zero"
+        >
+          0
+        </button>
+        <button
+          onmouseover="hoverEffect(this)"
+          onclick="calculate()"
+          class="equal"
+        >
+          =
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
