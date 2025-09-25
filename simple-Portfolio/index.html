@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Israr Khan - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div id="home">
+      <div class="profile_name">
+        Israr Khan (reactDEV)
+        <div class="contact_info">
+          <img src="html_finalprojimages/envelope.png" alt="Email icon">
+         dev.israrika@gmail.com
+        </div>
+        <div class="contact_info">
+          <img src="html_finalprojimages/phone.png" alt="Phone icon">
+          +92-334-0802409
+        </div>
+      </div>
+
+      <div class="topdiv">
+        <a class="topmenu" href="#about-me">About Me</a>
+        <a class="topmenu" href="#skills">Skills</a>
+        <a class="topmenu" href="#projects">Projects</a>
+        <a class="topmenu" href="#recommendations">Recommendations</a>
+        <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Me -->
+  <section id="about-me" class="container">
+    <div>
+      <img src="israr.png" class="profile_image width-100 height-100" alt="Profile GIF">
+    </div>
+    <div>
+      <h1>
+        Hi, I'm Israr! <img src="html_finalprojimages/waving-hand.png" width="60px" alt="Waving hand">
+      </h1>
+      <p>
+       Hi, I’m Israr Khan, a Computer Science student and passionate JavaScript Full-Stack Developer in the making. I enjoy building clean, functional, and user-friendly applications using technologies like JavaScript, React, and Node.js.
+
+I’m currently on a 90-day coding challenge, committing daily to GitHub to sharpen my development skills and create exciting projects.   </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="all_skills">
+      <div class="skill">
+        <img src="html_finalprojimages/html5.png" alt="HTML logo">
+        <h6>HTML</h6>
+        
+      </div>
+      <div class="skill">
+        <img src="html_finalprojimages/js.jpeg" alt="JavaScript logo">
+        <h6>JavaScript</h6>
+        
+      </div>
+      <div class="skill">
+        <img src="html_finalprojimages/css3.png" alt="CSS logo">
+        <h6>CSS</h6>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>DocOnline</h3>
+        <ul>
+          <li>Developed a modern Doctor Appointment System using the MERN Stack, enabling patients to book appointments, manage health records, and providing admins with a dashboard for efficient user and doctor management.</li>
+        </ul>
+      </div>
+      <hr>
+      <div class="project-card">
+        <h3>E_Commerce</h3>
+        <ul>
+          <li>Developed a modern eCommerce platform, Forever, using React, Tailwind CSS, and Context API, featuring category-based product browsing, filtering, a secure checkout system, and an admin-friendly shopping experience.</li>
+        </ul>
+      </div>
+       <div class="project-card">
+        <h3>School Management System</h3>
+        <ul>
+          <li>Developed a comprehensive School Management System using React, Node.js, and MongoDB, enabling efficient management of student records, attendance tracking, and grade management.</li>
+        </ul>
+      </div>
+      <hr>
+      
+    </div>
+  </section>
+
+  <!-- Recommendations -->
+  <section id="recommendations">
+    <h2>Recommendations</h2>
+    <div class="all_recommendations" id="all_recommendations">
+      <div class="recommendation">
+        <span>&#8220;</span>
+        Israr is a very quick learner and quickly grasps key concepts of Web development. 
+        He has great attitude and is an excellent team player.
+        <span>&#8221;</span>
+      </div>
+      <div class="recommendation">
+        <span>&#8220;</span>
+        Working with Israr has been an awesome experience. 
+        He is highly knowledgeable and ensures quality in every project.
+        <span>&#8221;</span>
+      </div>
+      <div class="recommendation">
+        <span>&#8220;</span>
+        Israr is a committed resource with deep domain knowledge. 
+        He will be an asset for any organisation.
+        <span>&#8221;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommendation Form -->
+  <section id="contact">
+    <div class="flex_center">
+      <fieldset>
+        <legend class="introduction">Leave a Recommendation</legend>
+        <input type="text" placeholder="Name (Optional)">
+        <textarea id="new_recommendation" rows="6" placeholder="Message"></textarea>
+        <div class="flex_center">
+          <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
+        </div>
+      </fieldset>
+    </div>
+  </section>
+
+  <!-- Scroll to Top Button -->
+  <div class="iconbutton">
+    <a href="#home">
+      <img src="html_finalprojimages/home.png" width="30px" alt="Home icon">
+    </a>
+  </div>
+
+  <!-- Pop-up -->
+  <div class="popup" id="popup">
+    <img src="html_finalprojimages/checkmark--outline.svg" alt="Checkmark icon">
+    <h3>Thank you for your recommendation!</h3>
+    <button onclick="showPopup(false)">Ok</button>
+  </div>
+</body>
+</html>

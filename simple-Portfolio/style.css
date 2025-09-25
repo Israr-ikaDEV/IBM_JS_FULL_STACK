@@ -1,0 +1,365 @@
+/* ====================
+   Global Styles
+==================== */
+:root {
+  --primary: #7600bc;
+  --primary-dark: #5a00a0;
+  --bg-light: #f9f9fb;
+  --bg-dark: #1a1a1a;
+  --text-light: #333;
+  --text-dark: #eee;
+  --card-light: #fff;
+  --card-dark: #2a2a2a;
+  --shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-dark: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+body {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ====================
+   Navigation Bar
+==================== */
+#home {
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.topmenu {
+  color: #eee;
+  margin: 0 15px;
+  padding: 10px 15px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.topmenu:hover {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.profile_name {
+  font-size: 24px;
+  font-weight: bold;
+}
+.profile_name .contact_info {
+  font-size: 14px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+.contact_info img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+/* ====================
+   Section Titles
+==================== */
+h2 {
+  font-size: 36px;
+  color: var(--primary);
+  margin: 40px 0 20px;
+  text-align: center;
+  position: relative;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Dark Mode Titles */
+body.dark h2 {
+  color: var(--primary);
+}
+body.dark h2::after {
+  background: var(--primary);
+}
+
+/* ====================
+   About Me
+==================== */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  background-color: var(--card-light);
+  box-shadow: var(--shadow);
+  margin: 30px auto;
+  border-radius: 12px;
+  max-width: 1000px;
+  transition: all 0.3s ease;
+}
+body.dark .container {
+  background-color: var(--card-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+#about-me h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+#about-me p {
+  font-size: 18px;
+  color: #555;
+  max-width: 600px;
+}
+body.dark #about-me p {
+  color: #ccc;
+}
+
+.profile_image {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+  margin: 20px;
+}
+body.dark .profile_image {
+  box-shadow: var(--shadow-dark);
+}
+
+/* ====================
+   Skills
+==================== */
+.all_skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+.skill {
+  background: var(--card-light);
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px;
+  width: 140px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.skill img {
+  height: 40px;
+  margin-bottom: 10px;
+}
+body.dark .skill {
+  background: var(--card-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+/* ====================
+   Projects
+==================== */
+.projects-container {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+}
+.project-card {
+  background: var(--card-light);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.project-card h3 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+.project-card li {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.5;
+}
+body.dark .project-card {
+  background: var(--card-dark);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-dark);
+}
+body.dark .project-card li {
+  color: #ccc;
+}
+
+/* ====================
+   Recommendations
+==================== */
+.all_recommendations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.recommendation {
+  font-style: italic;
+  width: 300px;
+  padding: 20px;
+  background-color: var(--card-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+}
+.recommendation:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.recommendation span {
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: bold;
+}
+body.dark .recommendation {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+/* ====================
+   Scroll to Top Button
+==================== */
+.iconbutton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.iconbutton:hover {
+  transform: scale(1.1);
+}
+
+/* ====================
+   Pop-up
+==================== */
+.popup {
+  width: 400px;
+  background-color: var(--card-light);
+  border-radius: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: fixed;
+  visibility: hidden;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+.popup img {
+  margin-top: 10px;
+}
+.popup button {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 16px;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.popup button:hover {
+  background: var(--primary-dark);
+}
+body.dark .popup {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+/* ====================
+   Recommendation Form
+==================== */
+input, textarea {
+  margin: 10px 0;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: 0.3s ease;
+}
+body.dark input, 
+body.dark textarea {
+  background-color: #333;
+  border: 1px solid #555;
+  color: var(--text-dark);
+}
+fieldset {
+  padding: 20px;
+  border: thin solid #ccc;
+  width: 60%;
+  margin: 30px auto;
+  background: var(--card-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+}
+body.dark fieldset {
+  background: var(--card-dark);
+  border: 1px solid #444;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+button {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background: var(--primary-dark);
+}
+  
