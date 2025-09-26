@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple HTML using React</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>I am a super heading from html</h1>
+    <div id="root">
+      
+      <!-- React will render content here -->
+    </div>
+    <h1>I am a super footer from html</h1>
+    <script src="../react-lib/react.development.js"></script>
+    <script src="../react-lib/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+
+
+      const helloElement = <h1>Hello, I am Simple h1 element from jsx</h1>;
+
+      function AnotherFunction() {
+        return <h2>I am h2 from a function based component</h2>;
+      }
+
+      function ButtonFunction() {
+        return (
+          <button onClick={() => alert("Button Clicked!")}>Click Me!</button>
+        );
+      }
+
+      function ToggleDarkMode() {
+        return (
+          <button
+            onClick={() => {
+              document.body.style.color =
+                document.body.style.color === "white" ? "black" : "white";
+              document.body.style.backgroundColor =
+                document.body.style.backgroundColor === "black"
+                  ? "white"
+                  : "black";
+            }}
+          >
+            Toggle Dark Mode
+          </button>
+        );
+      }
+
+
+
+     function RandomNumber() {
+  function randomNum() {
+    const num = Math.floor(Math.random() * 100) + 1;
+    document.getElementById("random-output").innerText = "👉 " + num;
+  }
+
+  return (
+    <div>
+      <button onClick={randomNum}>Generate Random Number</button>
+      <span id="random-output"></span>
+    </div>
+  );
+}
+
+      function PlainFunction() {
+        return (
+          <div >
+            {helloElement}
+            <AnotherFunction />
+            <ButtonFunction />
+            <ToggleDarkMode />
+            <RandomNumber />
+           
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<PlainFunction />);
+    </script>
+  </body>
+</html>
