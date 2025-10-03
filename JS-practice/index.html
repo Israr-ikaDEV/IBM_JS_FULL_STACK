@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="num">Enter a number:</label>
+    <input type="number" id="num" />
+    <button onclick="table()">submit</button>
+
+    <br />
+
+    <label for="iteration">Enter the number of iterations:</label>
+    <input type="number" id="iteration" />
+    <button onclick="tableXtimes()">submit</button>
+
+    <br />
+    <label for="prime">Enter a number to check if it's prime:</label>
+    <input type="number" id="prime" />
+    <button onclick="isPrimeNUM()">enter number</button>
+
+    <br />
+
+    <button onclick="printPrimeNumbers()">Print Primes</button>
+
+    <script>
+      function tableXtimes() {
+        let num = document.getElementById("iteration").value;
+
+        for (let j = 1; j <= 10; j++) {
+          for (let i = 1; i <= num; i++) {
+            console.log(j + " x " + i + " = " + j * i);
+          }
+        }
+      }
+
+      function table() {
+        let num = document.getElementById("num").value;
+        for (let i = 1; i <= 20; i++) {
+          console.log(num + " x " + i + " = " + num * i);
+        }
+      }
+
+      function isPrimeNUM() {
+        let num = document.getElementById("prime").value;
+        let isPrime = true;
+
+        if (num <= 1) {
+          isPrime = false;
+        } else if (num === 2) {
+          isPrime = true;
+        } else if (num > 2) {
+          for (let i = 3; i <= num; i++) {
+            if (num % i === 0) {
+              isPrime = false;
+              break;
+            }
+          }
+        }
+
+        if (isPrime) {
+          console.log(num + " is a prime number.");
+        } else {
+          console.log(num + " is not a prime number.");
+        }
+      }
+
+      function printPrimeNumbers() {
+        for (let i = 2; i <= 100; i++) {
+          let isPrime = true;
+          
+          if (i >= 2) {
+            for (let j = 2; j < i; j++) {
+              if (i % j === 0) {
+                isPrime = false;
+                break;
+              }
+            }
+          }
+
+          if (isPrime) {
+            console.log(i);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
