@@ -69,7 +69,7 @@ app.put('/users/:id', (req, res) => {
   console.log('✏️ User updated:', user);
   res.send(`User with ID ${req.params.id} updated successfully!`);
 });
-// ✅ Start the server
+// ✅ Start the server.
 app.listen(4000, () => {
   console.log('✅ Server running at http://localhost:4000');
 });
